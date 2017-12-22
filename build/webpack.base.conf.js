@@ -32,10 +32,12 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.less', '.css', '.scss'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+        'vue$': 'vue/dist/vue.common.js',
+        'src': path.resolve(__dirname, '../src'),
+        'assets': path.resolve(__dirname, '../src/assets'),
+        'components': path.resolve(__dirname, '../src/components')
     }
   },
   module: {
@@ -45,6 +47,14 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       },
       {
         test: /\.js$/,
