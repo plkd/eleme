@@ -2,7 +2,7 @@
  * 存储localStorage
  */
 export const setStore = (name, content) => {
-    if(!name) return;
+    if (!name) return;
     if(typeof content !== 'string') {
         content = JSON.stringify(content)
     }
@@ -13,6 +13,6 @@ export const setStore = (name, content) => {
  * 获取localStorage
  */
 export const getStore = name => {
-    if(!name) return;
+    if (!name) return;
     return window.localStorage.getItem(name)
 }

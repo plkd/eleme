@@ -2,3 +2,8 @@ $blue: #3190e8;
 $bc: #e4e4e4;
 $fc:#fff;
 
+//宽高
+@mixin wh($width, $height){
+	width: $width;
+	height: $height;
+}

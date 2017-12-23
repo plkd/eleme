@@ -28,7 +28,9 @@ import { mapActions, mapState } from "vuex";
 
 export default {
   data() {
-    return {};
+    return {
+        goBack: true,
+    };
   },
   mounted() {
     this.getUserInfo();
@@ -49,6 +51,18 @@ export default {
 
 <style lang="scss" scoped>
     @import '../../style/mixin';
-
+    #head_top{
+        background: $blue;
+        position: fixed;
+        left: 0;
+        top: 0;
+        @include wh(100%, 1.95rem)
+    }
+    .head_goback{
+        left: 0.4rem;
+        @include wh(0.6rem, 1rem);
+        line-height:2.2rem;
+        margin-left: .4rem;
+    }
     
 </style>
