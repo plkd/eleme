@@ -6,26 +6,37 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
+    env: {
+      NODE_ENV: '"development"'
+    },
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
-
-    context: [ // 代理路径
-      '/shopping',
-      '/ugc',
-      '/v1',
-      '/v2',
-      '/v3',
-      '/v4',
-      '/bos',
-      '/member',
-      '/promotion',
-      '/eus',
-      '/payapi',
-      '/img',
-    ],
+    // proxyTable: {},
+    proxyTable: {
+      '/v1':{
+        target:'http://cangdu.org:8001/v1',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/v1':''
+        }
+      }
+    },
+    // context: [ // 代理路径
+    //   '/shopping',
+    //   '/ugc',
+    //   '/v1',
+    //   '/v2',
+    //   '/v3',
+    //   '/v4',
+    //   '/bos',
+    //   '/member',
+    //   '/promotion',
+    //   '/eus',
+    //   '/payapi',
+    //   '/img',
+    // ],
+    // proxypath: 'http://cangdu.org:8001',
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -64,11 +75,14 @@ module.exports = {
   },
 
   build: {
+    env: {
+      NODE_ENV: '"production"'
+    },
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../elm/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, '../elm'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
 
