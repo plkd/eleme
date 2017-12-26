@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <transition name="router-fade">
-     <keep-alive>
-    <router-view></router-view>
-    </keep-alive>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </transition>
+    <svg-icon></svg-icon>
   </div>
 </template>
 

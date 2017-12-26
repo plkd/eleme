@@ -4,6 +4,11 @@ import Router from 'vue-router';
 import app from '../App'
 import { routerMode } from '../config/env'
 const home = r => require.ensure([], () => r(require('../page/home/home')), 'home')
+const profile = r => require.ensure([], () => r(require('../page/profile/profile')), 'profile')
+const info = r => require.ensure([], () => r(require('../page/profile/children/info')), 'info')
+const address = r => require.ensure([], () => r(require('../page/profile/children/children/address')), 'address')
+const add = r => require.ensure([], () => r(require('../page/profile/children/children/children/add')), 'add')
+const addDetail = r => require.ensure([], () => r(require('../page/profile/children/children/children/children/addDetail')), 'addDetail')
 
 Vue.use(Router);
 
@@ -32,6 +37,35 @@ export default new Router({
         {
           path: '/home',
           component: home
+        },
+        // 个人信息页
+        {
+          path: '/profile',
+          component: profile,
+          children: [
+            {
+              path: 'info',
+              component: info,
+              children: [
+                {
+                  path: 'address',
+                  component: address,
+                  children: [
+                    {
+                      path: 'add',
+                      component: add,
+                      children: [
+                        {
+                          path: 'addDetail',
+                          component: addDetail
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },
