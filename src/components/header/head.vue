@@ -48,8 +48,9 @@ export default {
 <style lang="scss" scoped>
 @import "../../style/mixin";
 #head_top {
-  background: $blue;
+  background-color: $blue;
   position: fixed;
+  z-index: 100;
   left: 0;
   top: 0;
   @include wh(100%, 1.95rem);
