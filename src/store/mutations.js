@@ -30,6 +30,7 @@ import {
 	BUY_CART,
 } from './mutation-types.js'
 
+import {setStore, getStore} from '../config/mUtils'
 
 export default {
 	// 獲取用戶信息存入vuex
@@ -49,7 +50,7 @@ export default {
 	// 记录用户信息
 	[RECORD_USERINFO](state, info) {
 		state.userInfo = info;
-		stage.login = true;
+		state.login = true;
 		setStore('user_id', info.user_id)
 	}
 }

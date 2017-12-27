@@ -1,6 +1,6 @@
 <template>
     <div class="loginContainer">
-        <head-top :head-title="loginWay ? '登录':'密码登录'" goBack="true">
+        <head-top :head-title="loginWay ? '登录':'密码登录'" go-back="true">
         </head-top>
         <form v-if="loginWay" class="loginForm">
             <section class="input_container phone_number">
