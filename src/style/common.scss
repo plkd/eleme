@@ -21,3 +21,19 @@ body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, l
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clear{
+    zoom:1;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #F5F5F5;
+}
