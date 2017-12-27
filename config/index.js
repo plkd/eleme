@@ -20,6 +20,13 @@ module.exports = {
         pathRewrite:{
           '^/v1':''
         }
+      },
+      '/v2':{
+        target:'http://cangdu.org:8001/v2',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/v2':''
+        }
       }
     },
     // context: [ // 代理路径
