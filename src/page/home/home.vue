@@ -23,7 +23,7 @@
         </section>
         <section class="group_city_container">
             <ul class="lettter_classify">
-                <li class="letter_classify_id" v-for="(value, key, index) in sortGroupCity" :key="key">
+                <li class="letter_classify_li" v-for="(value, key, index) in sortGroupCity" :key="key">
                     <h4 class="city_title">{{key}}
                         <span v-if="index == 0">（按字母排序）</span>
                     </h4>

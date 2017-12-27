@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div >
     <transition name="router-fade">
       <keep-alive>
         <router-view></router-view>
