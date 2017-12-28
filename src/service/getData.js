@@ -58,3 +58,55 @@ export const mobileCode = phone => fetch('/v4/mobile/verify_code/send', {
  * 退出登录
  */
 export const signout = () => fetch('/v2/signout');
+
+/**
+* 删除地址
+*/
+
+export const deleteAddress = (userid, addressid) => fetch('/v1/users/' + userid + '/addresses/' + addressid, {}, 'DELETE')
+
+/**
+*个人中心里编辑地址
+*/
+
+export const getAddressList = (user_id) => fetch('/v1/users/' + user_id + '/addresses')
+
+/**
+ * 添加地址
+ */
+
+export const postAddAddress = (userId, address, address_detail, geohash, name, phone, phone_bk, poi_type, sex, tag, tag_type) => fetch('/v1/users/' + userId + '/addresses', {
+    address,
+    address_detail,
+    geohash,
+    name,
+    phone,
+    phone_bk,
+    poi_type,
+    sex,
+    tag,
+    tag_type,
+}, 'POST');
+
+/**
+ * 搜索地址
+ */
+
+export const searchNearby = keyword => fetch('/v1/pois', {
+    type: 'nearby',
+    keyword
+});
+
+/**
+ * 检测帐号是否存在
+ */
+
+export const checkExsis = (checkNumber, type) => fetch('/v1/users/exists', {
+    [type]: checkNumber,
+    type
+});
+
+/**
+ * 改密码
+ */
+export const changePassword = (username, oldpassWord, newpassword, confirmpassword, captcha_code) => fetch('/v2/changepassword', { username, oldpassWord, newpassword, confirmpassword, captcha_code }, 'POST');

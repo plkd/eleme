@@ -56,20 +56,6 @@ export default {
 <style lang="scss">
 @import "src/style/mixin";
 
-.rating_page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 202;
-  background: #f2f2f2;
-  padding-top: 1.95rem;
-  p,
-  span {
-    font-family: Helvetica Neue, Tahoma, Arial;
-  }
-}
 .setname {
   width: 15.2rem;
   margin: 0 auto;

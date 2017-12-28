@@ -134,7 +134,7 @@ export default {
     ...mapState(["userInfo", "imgPath"])
   },
   mounted() {
-      this.getUserInfo();
+    this.getUserInfo();
   },
   methods: {
     ...mapActions(["getUserInfo"]),
@@ -208,20 +208,6 @@ export default {
 <style lang="scss">
 @import "src/style/mixin.scss";
 
-.rating_page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #f2f2f2;
-  z-index: 202;
-  padding-top: 1.95rem;
-  p,
-  span {
-    font-family: Helvetica Neue, Tahoma, Arial;
-  }
-}
 .profile-info {
   @include wh(100%,3.1rem);
   .profileinfopanel-upload {

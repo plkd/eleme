@@ -30,7 +30,7 @@ import {
 	BUY_CART,
 } from './mutation-types.js'
 
-import {setStore, getStore} from '../config/mUtils'
+import { setStore, getStore } from '../config/mUtils'
 
 export default {
 	// 獲取用戶信息存入vuex
@@ -58,8 +58,20 @@ export default {
 		state.userInfo = {};
 		state.login = false;
 	},
-		//修改用户名
-		[RESET_NAME](state,username) {
-			state.userInfo = Object.assign({}, state.userInfo,{username})
-		},
+	//修改用户名
+	[RESET_NAME](state, username) {
+		state.userInfo = Object.assign({}, state.userInfo, { username })
+	},
+	//删除地址列表
+	[SAVE_ADDRESS](state, newAdress) {
+		state.removeAddress = newAdress
+	},
+	//增加地址
+	[ADD_ADDRESS](state, obj) {
+		state.removeAddress = [obj, ...state.removeAddress];
+	},
+	//添加地址name
+	[SAVE_ADDDETAIL](state, addAddress) {
+		state.addAddress = addAddress;
+	},
 }

@@ -12,6 +12,7 @@ const addDetail = r => require.ensure([], () => r(require('../page/profile/child
 const login = r => require.ensure([], () => r(require('../page/login/login')), 'login')
 const setusername = r => require.ensure([], () => r(require('../page/profile/children/setUserName')), 'setusername')
 const service = r => require.ensure([], () => r(require('../page/service/service')), 'service')
+const forget = r => require.ensure([], () => r(require('../page/forget/forget')), 'forget')
 
 Vue.use(Router);
 
@@ -81,6 +82,10 @@ export default new Router({
         {
           path: '/login',
           component: login
+        },
+        {
+          path: '/forget',
+          component: forget
         }
       ]
     },
