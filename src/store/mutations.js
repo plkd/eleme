@@ -21,7 +21,7 @@ import {
 	SAVE_SHOPID,
 	SAVE_ORDER,
 	OUT_LOGIN,
-	RETSET_NAME,
+	RESET_NAME,
 	SAVE_AVANDER,
 	SAVE_ADDRESS,
 	SAVE_ADDDETAIL,
@@ -52,5 +52,14 @@ export default {
 		state.userInfo = info;
 		state.login = true;
 		setStore('user_id', info.user_id)
-	}
+	},
+	// 退出登录
+	[OUT_LOGIN](state) {
+		state.userInfo = {};
+		state.login = false;
+	},
+		//修改用户名
+		[RESET_NAME](state,username) {
+			state.userInfo = Object.assign({}, state.userInfo,{username})
+		},
 }

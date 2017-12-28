@@ -53,3 +53,8 @@ export const mobileCode = phone => fetch('/v4/mobile/verify_code/send', {
     scene: 'login',
     type: 'sms'
 }, 'POST');
+
+/**
+ * 退出登录
+ */
+export const signout = () => fetch('/v2/signout');

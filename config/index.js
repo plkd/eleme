@@ -14,18 +14,25 @@ module.exports = {
     assetsPublicPath: '/',
     // proxyTable: {},
     proxyTable: {
-      '/v1':{
-        target:'http://cangdu.org:8001/v1',
-        changeOrigin:true,
-        pathRewrite:{
-          '^/v1':''
+      '/v1': {
+        target: 'http://cangdu.org:8001/v1',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/v1': ''
         }
       },
-      '/v2':{
-        target:'http://cangdu.org:8001/v2',
-        changeOrigin:true,
-        pathRewrite:{
-          '^/v2':''
+      '/v2': {
+        target: 'http://cangdu.org:8001/v2',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/v2': ''
+        }
+      },
+      '/eus': {
+        target: 'http://cangdu.org:8001/eus',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/eus': ''
         }
       }
     },
