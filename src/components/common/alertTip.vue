@@ -78,7 +78,7 @@ export default {
     flex-direction: column;
     span:nth-of-type(1) {
       @include wh(0.12rem, 1.5rem);
-      background-color: #f8cb86;
+      background-color: #f8cb86
     }
     span:nth-of-type(2) {
       @include wh(0.2rem, 0.2rem);

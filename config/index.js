@@ -34,6 +34,13 @@ module.exports = {
         pathRewrite: {
           '^/eus': ''
         }
+      },
+      '/shopping': {
+        target: 'http://cangdu.org:8001/shopping',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/shopping': ''
+        }
       }
     },
     // context: [ // 代理路径
