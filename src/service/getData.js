@@ -110,3 +110,24 @@ export const checkExsis = (checkNumber, type) => fetch('/v1/users/exists', {
  * 改密码
  */
 export const changePassword = (username, oldpassWord, newpassword, confirmpassword, captcha_code) => fetch('/v2/changepassword', { username, oldpassWord, newpassword, confirmpassword, captcha_code }, 'POST');
+/**
+ * 获取当前所在城市
+ */
+
+export const currentcity = number => fetch('/v1/cities/' + number);
+
+/**
+ * 获取搜索地址
+ */
+
+export const searchplace = (cityid, value) => fetch('/v1/pois', {
+    type: 'search',
+    city_id: cityid,
+    keyword: value
+});
+
+/**
+ * 获取msite页面地址信息
+ */
+
+export const msiteAdress = geohash => fetch('/v2/pois/' + geohash);
