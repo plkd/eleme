@@ -3,7 +3,7 @@ import { imgBaseUrl, localapi, proapi } from '../../config/env'
 
 export const getImgPath = {
     methods: {
-        getImaPath(path) {
+        getImgPath(path) {
             let suffix;
             if (!path) {
                 return 'http://test.fe.ptdev.cn/elm/elmlogo.jpeg'

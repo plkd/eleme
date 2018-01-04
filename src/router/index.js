@@ -15,6 +15,7 @@ const setusername = r => require.ensure([], () => r(require('../page/profile/chi
 const service = r => require.ensure([], () => r(require('../page/service/service')), 'service')
 const forget = r => require.ensure([], () => r(require('../page/forget/forget')), 'forget')
 const msite = r => require.ensure([], () => r(require('../page/msite/msite')), 'msite')
+const food = r => require.ensure([], () => r(require('../page/food/food')), 'food')
 
 Vue.use(Router);
 
@@ -98,7 +99,12 @@ export default new Router({
         {
           path: '/forget',
           component: forget
-        }
+        },
+        //特色商铺列表页
+        {
+          path: '/food',
+          component: food
+        },
       ]
     },
   ],
